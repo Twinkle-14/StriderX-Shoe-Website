@@ -57,6 +57,19 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // StrideX Futuristic Color Palette
+        neon: {
+          pink: "hsl(var(--neon-pink))",
+          blue: "hsl(var(--neon-blue))",
+          purple: "hsl(var(--neon-purple))",
+          cyan: "hsl(var(--neon-cyan))",
+        },
+        dark: {
+          bg: "hsl(var(--dark-bg))",
+          surface: "hsl(var(--dark-surface))",
+          border: "hsl(var(--dark-border))",
+        },
+        glass: "hsl(var(--glass))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,10 +93,61 @@ export default {
             height: "0",
           },
         },
+        "glow-pulse": {
+          "0%, 100%": {
+            opacity: "1",
+            transform: "scale(1)",
+          },
+          "50%": {
+            opacity: "0.8",
+            transform: "scale(1.05)",
+          },
+        },
+        "slide-up": {
+          from: {
+            opacity: "0",
+            transform: "translateY(20px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        "float": {
+          "0%, 100%": {
+            transform: "translateY(0px)",
+          },
+          "50%": {
+            transform: "translateY(-10px)",
+          },
+        },
+        "hero-text": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(30px) scale(0.9)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0) scale(1)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+        "slide-up": "slide-up 0.6s ease-out",
+        "float": "float 3s ease-in-out infinite",
+        "hero-text": "hero-text 1s ease-out forwards",
+      },
+      fontFamily: {
+        'display': ['Inter', 'system-ui', 'sans-serif'],
+        'body': ['Inter', 'system-ui', 'sans-serif'],
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'neon-gradient': 'linear-gradient(135deg, hsl(var(--neon-pink)), hsl(var(--neon-blue)))',
+        'hero-gradient': 'linear-gradient(135deg, hsl(var(--dark-bg)) 0%, hsl(var(--neon-purple)) 100%)',
       },
     },
   },
