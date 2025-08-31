@@ -2,9 +2,8 @@ StrideX – Shoe Website 👟
 
 StrideX is a modern, stylish shoe e-commerce MVP built to showcase trendy sneakers with cool effects and prices in INR. The goal is to create a futuristic, interactive shopping experience for fashion-forward users.
 
-🚀 Live Preview
-
-👉 View StrideX Here
+## 🚀 Live Preview  
+[👉 Click here to view StrideX](https://e645c6b10fac494ea70dc1db65f83fe5-main.projects.builder.my/)
 
 ✨ Features
 
