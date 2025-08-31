@@ -178,10 +178,15 @@ const ShoeCard = ({ shoe }: { shoe: typeof featuredShoes[0] }) => {
       {/* Shoe Image */}
       <div className="relative mb-6 overflow-hidden rounded-xl">
         <div className="aspect-square bg-gradient-to-br from-neon-pink/10 via-neon-purple/5 to-neon-blue/10 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
-          <img 
-            src={shoe.image} 
+          <img
+            src={shoe.image}
             alt={shoe.name}
             className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+            loading="lazy"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23334155'/%3E%3Ctext x='200' y='200' text-anchor='middle' dy='0.3em' fill='%23e2e8f0' font-family='sans-serif' font-size='16'%3E" + shoe.name + "%3C/text%3E%3C/svg%3E";
+            }}
           />
           {/* Floating Icons */}
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -195,7 +200,7 @@ const ShoeCard = ({ shoe }: { shoe: typeof featuredShoes[0] }) => {
             </div>
           </div>
         </div>
-        
+
         {/* Hover Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
           <button className="btn-neon text-sm">
