@@ -8,22 +8,30 @@
 @layer components {
   /* Gradient Backgrounds */
   .bg-hero-gradient {
-    background: linear-gradient(135deg,
+    background: linear-gradient(
+      135deg,
       hsl(var(--dark-bg)) 0%,
       hsl(var(--neon-purple) / 0.1) 50%,
-      hsl(var(--dark-bg)) 100%);
+      hsl(var(--dark-bg)) 100%
+    );
   }
 
   .bg-neon-gradient {
-    background: linear-gradient(135deg,
+    background: linear-gradient(
+      135deg,
       hsl(var(--neon-pink)) 0%,
-      hsl(var(--neon-blue)) 100%);
+      hsl(var(--neon-blue)) 100%
+    );
   }
 
   /* Button Styles */
   .btn-neon {
     @apply px-8 py-3 rounded-xl font-semibold transition-all duration-300;
-    background: linear-gradient(135deg, hsl(var(--neon-pink)), hsl(var(--neon-blue)));
+    background: linear-gradient(
+      135deg,
+      hsl(var(--neon-pink)),
+      hsl(var(--neon-blue))
+    );
     color: hsl(var(--dark-bg));
     position: relative;
     overflow: hidden;
@@ -35,13 +43,18 @@
   }
 
   .btn-neon::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
     transition: left 0.5s;
   }
 
@@ -124,7 +137,11 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
-    background: radial-gradient(ellipse at top, hsl(var(--dark-surface)) 0%, hsl(var(--dark-bg)) 100%);
+    background: radial-gradient(
+      ellipse at top,
+      hsl(var(--dark-surface)) 0%,
+      hsl(var(--dark-bg)) 100%
+    );
     min-height: 100vh;
   }
 
@@ -147,11 +164,15 @@
 
   /* Glow Effects */
   .glow-neon-pink {
-    box-shadow: 0 0 20px hsl(var(--neon-pink) / 0.3), 0 0 40px hsl(var(--neon-pink) / 0.1);
+    box-shadow:
+      0 0 20px hsl(var(--neon-pink) / 0.3),
+      0 0 40px hsl(var(--neon-pink) / 0.1);
   }
 
   .glow-neon-blue {
-    box-shadow: 0 0 20px hsl(var(--neon-blue) / 0.3), 0 0 40px hsl(var(--neon-blue) / 0.1);
+    box-shadow:
+      0 0 20px hsl(var(--neon-blue) / 0.3),
+      0 0 40px hsl(var(--neon-blue) / 0.1);
   }
 
   /* Glass Effect */
@@ -163,7 +184,10 @@
 
   /* Text Glow */
   .text-glow {
-    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+    text-shadow:
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 30px currentColor;
   }
 
   /* Hover Animations */

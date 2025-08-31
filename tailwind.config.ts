@@ -113,7 +113,7 @@ export default {
             transform: "translateY(0)",
           },
         },
-        "float": {
+        float: {
           "0%, 100%": {
             transform: "translateY(0px)",
           },
@@ -137,17 +137,19 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "glow-pulse": "glow-pulse 2s ease-in-out infinite",
         "slide-up": "slide-up 0.6s ease-out",
-        "float": "float 3s ease-in-out infinite",
+        float: "float 3s ease-in-out infinite",
         "hero-text": "hero-text 1s ease-out forwards",
       },
       fontFamily: {
-        'display': ['Inter', 'system-ui', 'sans-serif'],
-        'body': ['Inter', 'system-ui', 'sans-serif'],
+        display: ["Inter", "system-ui", "sans-serif"],
+        body: ["Inter", "system-ui", "sans-serif"],
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'neon-gradient': 'linear-gradient(135deg, hsl(var(--neon-pink)), hsl(var(--neon-blue)))',
-        'hero-gradient': 'linear-gradient(135deg, hsl(var(--dark-bg)) 0%, hsl(var(--neon-purple)) 100%)',
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "neon-gradient":
+          "linear-gradient(135deg, hsl(var(--neon-pink)), hsl(var(--neon-blue)))",
+        "hero-gradient":
+          "linear-gradient(135deg, hsl(var(--dark-bg)) 0%, hsl(var(--neon-purple)) 100%)",
       },
     },
   },

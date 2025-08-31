@@ -1,5 +1,12 @@
-import { useState, useEffect } from 'react';
-import { ChevronRight, Star, ShoppingBag, Heart, Zap, Sparkles } from 'lucide-react';
+import { useState, useEffect } from "react";
+import {
+  ChevronRight,
+  Star,
+  ShoppingBag,
+  Heart,
+  Zap,
+  Sparkles,
+} from "lucide-react";
 
 // Sample shoe data
 const featuredShoes = [
@@ -13,102 +20,110 @@ const featuredShoes = [
     reviews: 127,
     colors: ["#FF00FF", "#00FFFF", "#FFFF00"],
     isNew: true,
-    tag: "Limited Edition"
+    tag: "Limited Edition",
   },
   {
     id: 2,
     name: "Neon Pulse Pro",
     price: 9999,
     originalPrice: 11999,
-    image: "https://images.pexels.com/photos/26902738/pexels-photo-26902738.jpeg",
+    image:
+      "https://images.pexels.com/photos/26902738/pexels-photo-26902738.jpeg",
     rating: 4.8,
     reviews: 89,
     colors: ["#FF1493", "#1E90FF", "#32CD32"],
     isHot: true,
-    tag: "Best Seller"
+    tag: "Best Seller",
   },
   {
     id: 3,
     name: "Cyber Runner Elite",
     price: 14999,
     originalPrice: 17999,
-    image: "https://images.pexels.com/photos/20298286/pexels-photo-20298286.png",
+    image:
+      "https://images.pexels.com/photos/20298286/pexels-photo-20298286.png",
     rating: 4.9,
     reviews: 203,
     colors: ["#8A2BE2", "#FF4500", "#00CED1"],
     isNew: true,
-    tag: "Just Dropped"
+    tag: "Just Dropped",
   },
   {
     id: 4,
     name: "Future Step X1",
     price: 8999,
     originalPrice: 10999,
-    image: "https://images.pexels.com/photos/27008318/pexels-photo-27008318.jpeg",
+    image:
+      "https://images.pexels.com/photos/27008318/pexels-photo-27008318.jpeg",
     rating: 4.7,
     reviews: 156,
     colors: ["#FF69B4", "#00BFFF", "#FFD700"],
-    tag: "Trending"
+    tag: "Trending",
   },
   {
     id: 5,
     name: "Glow Walker Max",
     price: 11999,
     originalPrice: 13999,
-    image: "https://images.pexels.com/photos/10963373/pexels-photo-10963373.jpeg",
+    image:
+      "https://images.pexels.com/photos/10963373/pexels-photo-10963373.jpeg",
     rating: 4.8,
     reviews: 92,
     colors: ["#DC143C", "#00FF7F", "#FF1493"],
     isHot: true,
-    tag: "Staff Pick"
+    tag: "Staff Pick",
   },
   {
     id: 6,
     name: "Volt Runner Pro",
     price: 13999,
     originalPrice: 16999,
-    image: "https://images.pexels.com/photos/20350042/pexels-photo-20350042.jpeg",
+    image:
+      "https://images.pexels.com/photos/20350042/pexels-photo-20350042.jpeg",
     rating: 5.0,
     reviews: 74,
     colors: ["#9932CC", "#FF6347", "#40E0D0"],
     isNew: true,
-    tag: "New Drop"
+    tag: "New Drop",
   },
   {
     id: 7,
     name: "Plasma Boost X7",
     price: 16999,
     originalPrice: 19999,
-    image: "https://images.pexels.com/photos/26775749/pexels-photo-26775749.jpeg",
+    image:
+      "https://images.pexels.com/photos/26775749/pexels-photo-26775749.jpeg",
     rating: 4.9,
     reviews: 185,
     colors: ["#00FFFF", "#FF1493", "#FFD700"],
     isNew: true,
-    tag: "Exclusive"
+    tag: "Exclusive",
   },
   {
     id: 8,
     name: "Matrix Stride",
     price: 10999,
     originalPrice: 12999,
-    image: "https://images.pexels.com/photos/19869753/pexels-photo-19869753.jpeg",
+    image:
+      "https://images.pexels.com/photos/19869753/pexels-photo-19869753.jpeg",
     rating: 4.6,
     reviews: 112,
     colors: ["#8A2BE2", "#00CED1", "#FF6347"],
     isHot: true,
-    tag: "Gaming Edition"
+    tag: "Gaming Edition",
   },
   {
     id: 9,
     name: "Infinity Walker",
     price: 15999,
     originalPrice: 18999,
-    image: "https://images.pexels.com/photos/27875070/pexels-photo-27875070.jpeg",
+    image:
+      "https://images.pexels.com/photos/27875070/pexels-photo-27875070.jpeg",
     rating: 4.8,
     reviews: 167,
     colors: ["#FF00FF", "#1E90FF", "#32CD32"],
     isNew: true,
-    tag: "Premium"
+    tag: "Premium",
   },
   {
     id: 10,
@@ -119,35 +134,37 @@ const featuredShoes = [
     rating: 4.5,
     reviews: 94,
     colors: ["#FF4500", "#00FF7F", "#9932CC"],
-    tag: "Everyday"
+    tag: "Everyday",
   },
   {
     id: 11,
     name: "Neon Flash Elite",
     price: 18999,
     originalPrice: 22999,
-    image: "https://images.pexels.com/photos/19882426/pexels-photo-19882426.jpeg",
+    image:
+      "https://images.pexels.com/photos/19882426/pexels-photo-19882426.jpeg",
     rating: 5.0,
     reviews: 88,
     colors: ["#FF1493", "#00FFFF", "#FFD700"],
     isNew: true,
-    tag: "Pro Edition"
+    tag: "Pro Edition",
   },
   {
     id: 12,
     name: "Hyper Volt",
     price: 13499,
     originalPrice: 15999,
-    image: "https://images.pexels.com/photos/28488349/pexels-photo-28488349.jpeg",
+    image:
+      "https://images.pexels.com/photos/28488349/pexels-photo-28488349.jpeg",
     rating: 4.7,
     reviews: 142,
     colors: ["#DC143C", "#40E0D0", "#FF69B4"],
     isHot: true,
-    tag: "Sports"
-  }
+    tag: "Sports",
+  },
 ];
 
-const ShoeCard = ({ shoe }: { shoe: typeof featuredShoes[0] }) => {
+const ShoeCard = ({ shoe }: { shoe: (typeof featuredShoes)[0] }) => {
   const [isLiked, setIsLiked] = useState(false);
   const [selectedColor, setSelectedColor] = useState(0);
 
@@ -155,24 +172,30 @@ const ShoeCard = ({ shoe }: { shoe: typeof featuredShoes[0] }) => {
     <div className="group relative bg-dark-surface/50 glass rounded-2xl p-6 hover-lift glow-neon-pink border border-dark-border/50 overflow-hidden">
       {/* Background Glow Effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-neon-pink/5 via-transparent to-neon-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      
+
       {/* Tag */}
       <div className="absolute top-4 left-4 z-10">
-        <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-          shoe.isNew ? 'bg-neon-blue/20 text-neon-blue border border-neon-blue/30' :
-          shoe.isHot ? 'bg-neon-pink/20 text-neon-pink border border-neon-pink/30' :
-          'bg-neon-purple/20 text-neon-purple border border-neon-purple/30'
-        }`}>
+        <span
+          className={`px-3 py-1 rounded-full text-xs font-semibold ${
+            shoe.isNew
+              ? "bg-neon-blue/20 text-neon-blue border border-neon-blue/30"
+              : shoe.isHot
+                ? "bg-neon-pink/20 text-neon-pink border border-neon-pink/30"
+                : "bg-neon-purple/20 text-neon-purple border border-neon-purple/30"
+          }`}
+        >
           {shoe.tag}
         </span>
       </div>
 
       {/* Like Button */}
-      <button 
+      <button
         onClick={() => setIsLiked(!isLiked)}
         className="absolute top-4 right-4 z-10 p-2 rounded-full bg-dark-bg/50 backdrop-blur-sm border border-dark-border/50 hover:bg-neon-pink/20 transition-all duration-300"
       >
-        <Heart className={`w-4 h-4 ${isLiked ? 'fill-neon-pink text-neon-pink' : 'text-foreground/70'}`} />
+        <Heart
+          className={`w-4 h-4 ${isLiked ? "fill-neon-pink text-neon-pink" : "text-foreground/70"}`}
+        />
       </button>
 
       {/* Shoe Image */}
@@ -185,7 +208,10 @@ const ShoeCard = ({ shoe }: { shoe: typeof featuredShoes[0] }) => {
             loading="lazy"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23334155'/%3E%3Ctext x='200' y='200' text-anchor='middle' dy='0.3em' fill='%23e2e8f0' font-family='sans-serif' font-size='16'%3E" + shoe.name + "%3C/text%3E%3C/svg%3E";
+              target.src =
+                "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23334155'/%3E%3Ctext x='200' y='200' text-anchor='middle' dy='0.3em' fill='%23e2e8f0' font-family='sans-serif' font-size='16'%3E" +
+                shoe.name +
+                "%3C/text%3E%3C/svg%3E";
             }}
           />
           {/* Floating Icons */}
@@ -194,7 +220,10 @@ const ShoeCard = ({ shoe }: { shoe: typeof featuredShoes[0] }) => {
               <div className="p-3 rounded-full bg-neon-pink/20 backdrop-blur-sm animate-float">
                 <Zap className="w-6 h-6 text-neon-pink" />
               </div>
-              <div className="p-3 rounded-full bg-neon-blue/20 backdrop-blur-sm animate-float" style={{ animationDelay: '0.5s' }}>
+              <div
+                className="p-3 rounded-full bg-neon-blue/20 backdrop-blur-sm animate-float"
+                style={{ animationDelay: "0.5s" }}
+              >
                 <Sparkles className="w-6 h-6 text-neon-blue" />
               </div>
             </div>
@@ -203,9 +232,7 @@ const ShoeCard = ({ shoe }: { shoe: typeof featuredShoes[0] }) => {
 
         {/* Hover Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-          <button className="btn-neon text-sm">
-            Quick View
-          </button>
+          <button className="btn-neon text-sm">Quick View</button>
         </div>
       </div>
 
@@ -216,7 +243,9 @@ const ShoeCard = ({ shoe }: { shoe: typeof featuredShoes[0] }) => {
             key={index}
             onClick={() => setSelectedColor(index)}
             className={`w-6 h-6 rounded-full border-2 transition-all duration-300 ${
-              selectedColor === index ? 'border-neon-pink scale-110' : 'border-dark-border/50 hover:border-neon-blue/50'
+              selectedColor === index
+                ? "border-neon-pink scale-110"
+                : "border-dark-border/50 hover:border-neon-blue/50"
             }`}
             style={{ backgroundColor: color }}
           />
@@ -228,14 +257,14 @@ const ShoeCard = ({ shoe }: { shoe: typeof featuredShoes[0] }) => {
         <h3 className="font-bold text-lg text-foreground group-hover:text-neon-pink transition-colors duration-300">
           {shoe.name}
         </h3>
-        
+
         {/* Rating */}
         <div className="flex items-center space-x-2">
           <div className="flex items-center">
             {[...Array(5)].map((_, i) => (
-              <Star 
-                key={i} 
-                className={`w-4 h-4 ${i < Math.floor(shoe.rating) ? 'text-neon-blue fill-neon-blue' : 'text-muted-foreground'}`} 
+              <Star
+                key={i}
+                className={`w-4 h-4 ${i < Math.floor(shoe.rating) ? "text-neon-blue fill-neon-blue" : "text-muted-foreground"}`}
               />
             ))}
           </div>
@@ -285,14 +314,36 @@ export default function Index() {
             <div className="w-8 h-8 bg-neon-gradient rounded-lg flex items-center justify-center">
               <Zap className="w-5 h-5 text-dark-bg" />
             </div>
-            <span className="text-2xl font-bold text-glow text-neon-pink">StrideX</span>
+            <span className="text-2xl font-bold text-glow text-neon-pink">
+              StrideX
+            </span>
           </div>
-          
+
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-foreground hover:text-neon-pink transition-colors duration-300">New Drops</a>
-            <a href="#" className="text-foreground hover:text-neon-blue transition-colors duration-300">Men</a>
-            <a href="#" className="text-foreground hover:text-neon-purple transition-colors duration-300">Women</a>
-            <a href="#" className="text-foreground hover:text-neon-cyan transition-colors duration-300">Collections</a>
+            <a
+              href="#"
+              className="text-foreground hover:text-neon-pink transition-colors duration-300"
+            >
+              New Drops
+            </a>
+            <a
+              href="#"
+              className="text-foreground hover:text-neon-blue transition-colors duration-300"
+            >
+              Men
+            </a>
+            <a
+              href="#"
+              className="text-foreground hover:text-neon-purple transition-colors duration-300"
+            >
+              Women
+            </a>
+            <a
+              href="#"
+              className="text-foreground hover:text-neon-cyan transition-colors duration-300"
+            >
+              Collections
+            </a>
           </div>
 
           <div className="flex items-center space-x-4">
@@ -301,7 +352,9 @@ export default function Index() {
             </button>
             <button className="p-2 rounded-full hover:bg-dark-surface transition-colors duration-300 relative">
               <ShoppingBag className="w-6 h-6 text-foreground" />
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-neon-pink rounded-full text-xs font-semibold text-dark-bg flex items-center justify-center">3</span>
+              <span className="absolute -top-1 -right-1 w-5 h-5 bg-neon-pink rounded-full text-xs font-semibold text-dark-bg flex items-center justify-center">
+                3
+              </span>
             </button>
           </div>
         </nav>
@@ -313,7 +366,10 @@ export default function Index() {
         <div className="absolute inset-0 bg-hero-gradient" />
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-pink/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-blue/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+          <div
+            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-blue/10 rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "1s" }}
+          />
         </div>
 
         {/* Hero Content */}
@@ -321,19 +377,32 @@ export default function Index() {
           <div className="animate-hero-text">
             <h1 className="text-6xl md:text-8xl font-black mb-6">
               <span className="block text-foreground">Step</span>
-              <span className="block bg-neon-gradient bg-clip-text text-transparent text-glow animate-glow-pulse">Bold.</span>
+              <span className="block bg-neon-gradient bg-clip-text text-transparent text-glow animate-glow-pulse">
+                Bold.
+              </span>
               <span className="block text-foreground">Step</span>
-              <span className="block bg-gradient-to-r from-neon-blue to-neon-cyan bg-clip-text text-transparent text-glow animate-glow-pulse" style={{ animationDelay: '0.5s' }}>Future.</span>
+              <span
+                className="block bg-gradient-to-r from-neon-blue to-neon-cyan bg-clip-text text-transparent text-glow animate-glow-pulse"
+                style={{ animationDelay: "0.5s" }}
+              >
+                Future.
+              </span>
             </h1>
           </div>
-          
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-slide-up" style={{ animationDelay: '0.5s' }}>
+
+          <p
+            className="text-xl md:text-2xl text-muted-foreground mb-8 animate-slide-up"
+            style={{ animationDelay: "0.5s" }}
+          >
             Experience the next generation of footwear technology.
             <br />
             Where style meets innovation.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 animate-slide-up" style={{ animationDelay: '1s' }}>
+          <div
+            className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 animate-slide-up"
+            style={{ animationDelay: "1s" }}
+          >
             <button className="btn-neon text-lg px-10 py-4">
               Shop New Drops
             </button>
@@ -343,12 +412,17 @@ export default function Index() {
           </div>
 
           {/* Live Counter */}
-          <div className="mt-12 glass rounded-2xl p-6 inline-block animate-slide-up" style={{ animationDelay: '1.5s' }}>
-            <div className="text-sm text-muted-foreground mb-2">Next Drop In</div>
+          <div
+            className="mt-12 glass rounded-2xl p-6 inline-block animate-slide-up"
+            style={{ animationDelay: "1.5s" }}
+          >
+            <div className="text-sm text-muted-foreground mb-2">
+              Next Drop In
+            </div>
             <div className="text-2xl font-bold text-neon-pink">
-              {String(Math.floor(Math.random() * 24)).padStart(2, '0')}:
-              {String(currentTime.getMinutes()).padStart(2, '0')}:
-              {String(currentTime.getSeconds()).padStart(2, '0')}
+              {String(Math.floor(Math.random() * 24)).padStart(2, "0")}:
+              {String(currentTime.getMinutes()).padStart(2, "0")}:
+              {String(currentTime.getSeconds()).padStart(2, "0")}
             </div>
           </div>
         </div>
@@ -366,10 +440,13 @@ export default function Index() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-black text-foreground mb-4">
               Featured
-              <span className="block bg-neon-gradient bg-clip-text text-transparent text-glow">Drops</span>
+              <span className="block bg-neon-gradient bg-clip-text text-transparent text-glow">
+                Drops
+              </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Discover our latest collection of futuristic footwear designed for the bold and fearless.
+              Discover our latest collection of futuristic footwear designed for
+              the bold and fearless.
             </p>
           </div>
 
@@ -404,14 +481,17 @@ export default function Index() {
             <div className="relative z-10">
               <h3 className="text-3xl md:text-5xl font-black text-foreground mb-6">
                 Join the
-                <span className="block bg-neon-gradient bg-clip-text text-transparent text-glow">Revolution</span>
+                <span className="block bg-neon-gradient bg-clip-text text-transparent text-glow">
+                  Revolution
+                </span>
               </h3>
               <p className="text-lg text-muted-foreground mb-8">
-                Be the first to know about new drops, exclusive releases, and member-only perks.
+                Be the first to know about new drops, exclusive releases, and
+                member-only perks.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   placeholder="Enter your email"
                   className="px-6 py-3 rounded-xl bg-dark-surface border border-dark-border text-foreground placeholder-muted-foreground focus:outline-none focus:border-neon-pink transition-colors duration-300 w-full sm:w-auto"
                 />
@@ -431,7 +511,9 @@ export default function Index() {
             <div className="w-8 h-8 bg-neon-gradient rounded-lg flex items-center justify-center">
               <Zap className="w-5 h-5 text-dark-bg" />
             </div>
-            <span className="text-2xl font-bold text-glow text-neon-pink">StrideX</span>
+            <span className="text-2xl font-bold text-glow text-neon-pink">
+              StrideX
+            </span>
           </div>
           <p className="text-muted-foreground">
             © 2024 StrideX. Step into the future.
