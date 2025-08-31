@@ -374,12 +374,12 @@ export default function Index() {
           </div>
 
           {/* Shoes Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
             {featuredShoes.map((shoe, index) => (
-              <div 
-                key={shoe.id} 
+              <div
+                key={shoe.id}
                 className="animate-slide-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{ animationDelay: `${index * 0.05}s` }}
               >
                 <ShoeCard shoe={shoe} />
               </div>
